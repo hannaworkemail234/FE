@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Component Snapshot Testing should match snapshot 1`] = `
+<div
+  class="App"
+>
+  <nav
+    class="navbar"
+  >
+    <h1
+      class="navbar-title"
+    >
+      📊 CRUD Management System
+    </h1>
+    <p
+      class="navbar-subtitle"
+    >
+      Users & Products Dashboard
+    </p>
+  </nav>
+  <div
+    class="dashboard-container"
+  >
+    <div
+      class="tables-grid"
+    >
+      <div
+        class="table-section"
+      >
+        <div
+          data-testid="user-table-mock"
+        >
+          User Table Component
+        </div>
+      </div>
+      <div
+        class="table-section"
+      >
+        <div
+          data-testid="product-table-mock"
+        >
+          Product Table Component
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer
+    class="footer"
+  >
+    <p>
+      ✓ Connected to Backend API on http://localhost:3000
+    </p>
+  </footer>
+</div>
+`;
