@@ -3,34 +3,34 @@
 ## 📋 Overview
 
 This CRUD Management System consists of:
-- **Backend**: Express.js server with User and Product APIs (Port 3000)
+- **Backend**: Flask API with SQLite for users and products (Port 3000)
 - **Frontend**: React application with User and Product management interfaces
 
 ## 🚀 Quick Setup
 
-### Step 1: Ensure Backend is Running
+### Step 1: Start the Backend
 
-```bash
-cd C:\Users\HangNTT2195\Desktop\Projects\BE
-npm start
+From the `FE` directory:
+
+```powershell
+cd ..\BE1
+uv sync
+uv run python app.py
 ```
 
-You should see:
-```
-✓ Server is running on http://localhost:3000
-✓ POST /api/users - Add new user
-✓ GET /api/users - Get all users
-... (other endpoints)
-```
+The Flask API runs at `http://localhost:3000`.
 
 ### Step 2: Start Frontend in Another Terminal
 
-```bash
-cd C:\Users\HangNTT2195\Desktop\Projects\FE
-npm start
+Open another terminal in the `FE` directory:
+
+```powershell
+$env:PORT = "3001"
+$env:REACT_APP_API_URL = "http://localhost:3000/api"
+npm.cmd start
 ```
 
-The React app will open automatically in your browser (usually at http://localhost:3001 if 3000 is taken).
+Open the React app at `http://localhost:3001`.
 
 ## 📊 CRUD Operations Overview
 
@@ -156,9 +156,8 @@ If you see "Failed to fetch users" or similar errors:
 ## 🔗 Connected Systems
 
 ```
-Frontend (React) ←→ Backend API (Express.js) ←→ JSON Files
-   Port 3001           Port 3000              data.json
-                                           products.json
+Frontend (React) ←→ Backend API (Flask) ←→ SQLite Database
+   Port 3001          Port 3000              app.db
 ```
 
 ---

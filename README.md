@@ -27,38 +27,38 @@ A modern React application for managing Users and Products with full CRUD operat
 
 - Node.js (v14 or higher)
 - npm
-- Backend server running on `http://localhost:3000`
+- Python 3.10+ and [uv](https://docs.astral.sh/uv/)
 
 ## Installation
 
-1. Install dependencies:
-```bash
-npm install
+1. In the `FE` directory, install dependencies:
+```powershell
+npm.cmd install
 ```
 
 ## Getting Started
 
 ### Step 1: Start the Backend Server
-Make sure your backend server is running on port 3000:
-```bash
-cd ../BE
-npm start
+From the `FE` directory in a terminal, start the Flask backend from the sibling `BE1` folder:
+
+```powershell
+cd ..\BE1
+uv sync
+uv run python app.py
 ```
 
-The server should display:
-```
-✓ Server is running on http://localhost:3000
-```
+The API is available at `http://localhost:3000`.
 
 ### Step 2: Start the Frontend Development Server
-In the FE directory:
-```bash
-npm start
+In a second terminal opened in the `FE` directory:
+
+```powershell
+$env:PORT = "3001"
+$env:REACT_APP_API_URL = "http://localhost:3000/api"
+npm.cmd start
 ```
 
-The app will automatically open in your browser at `http://localhost:3000` (React development server runs on this port by default, but connects to backend APIs also on 3000).
-
-**Note:** If port 3000 is already in use by the backend, React will prompt you to use port 3001 instead.
+Open `http://localhost:3001`. The frontend API URL can be overridden with `REACT_APP_API_URL` (for example, in a local `.env` file).
 
 ## Project Structure
 
